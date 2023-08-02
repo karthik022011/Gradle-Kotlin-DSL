@@ -27,6 +27,20 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
+
+    productFlavors {
+        create("free") {
+            dimension = "version" // Optional, only needed if you have multiple dimensions
+            applicationIdSuffix = ".free" // Add a suffix to the package name to differentiate flavors
+            // Other configuration specific to the free flavor
+        }
+        create("paid") {
+            dimension = "version" // Optional, only needed if you have multiple dimensions
+            applicationIdSuffix = ".paid" // Add a suffix to the package name to differentiate flavors
+            // Other configuration specific to the paid flavor
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
